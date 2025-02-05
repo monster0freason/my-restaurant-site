@@ -13,7 +13,11 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #F9F9F9;
+      background-image: url('img/your-background-image.png'); /* Add your image here */
+      background-attachment: fixed; /* Keeps the image fixed while scrolling */
+      background-size: cover;       /* Ensures the image covers the entire screen */
+      background-position: center;  /* Centers the image */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
       color: #333;
       line-height: 1.6;
     }
@@ -24,7 +28,13 @@
     
     /* --- Header / Splash Section --- */
     .splash {
-      background-color: #d00ad0;
+      background: url('img/splash-screen.png') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 49vh;
+     
+      
+      /* background-color: #d00ad0; */
       color: #fff;
       text-align: center;
       padding: 30px 20px;
@@ -44,17 +54,20 @@
     /* --- Section Styles --- */
     section {
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);  /* 80% opaque white */
       border-bottom: 1px solid #ddd;
     }
     section h2 {
       color: #d00ad0;
       margin-bottom: 15px;
       font-size: 24px;
+      /* font-family: 'Monotype Corsiva','Roboto', sans-serif; */
+
     }
     section p.section-desc {
       font-size: 16px;
       margin-bottom: 15px;
+      font-weight: bold;
     }
     
     /* --- Dish Card Styles --- */
@@ -199,9 +212,9 @@
 <body>
   <!-- Splash / Welcome Section -->
   <div class="splash" id="splash">
-    <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" />
-    <h1 id="restaurantName">Welcome to The Great Eatery</h1>
-    <p>Please browse our menu below</p>
+    <!-- <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" /> -->
+    <h1 id="restaurantName"></h1>
+    <p></p>
   </div>
 
   <!-- Container for Menu Sections -->
@@ -345,14 +358,14 @@
         const data = jsyaml.load(yamlText);
 
         // Update restaurant info in the splash section
-        if (data.restaurant) {
-          if (data.restaurant.name) {
-            restaurantNameElem.textContent = 'Welcome to ' + data.restaurant.name;
-          }
-          if (data.restaurant.logo) {
-            restaurantLogoElem.src = data.restaurant.logo;
-          }
-        }
+        // if (data.restaurant) {
+        //   if (data.restaurant.name) {
+        //     restaurantNameElem.textContent = 'Welcome to ' + data.restaurant.name;
+        //   }
+        //   if (data.restaurant.logo) {
+        //     restaurantLogoElem.src = data.restaurant.logo;
+        //   }
+        // }
 
         // For each section in the YAML, create and append the menu section
         if (data.restaurant && data.restaurant.sections) {

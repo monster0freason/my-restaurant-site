@@ -29,18 +29,16 @@
     /* --- Header / Splash Section --- */
     .splash {
   background: url('img/splash-screen.png') no-repeat center center;
-  background-size: contain; /* Ensures full image visibility */
-  background-attachment: scroll; /* Prevents fixed background effect */
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 0; /* Remove padding */
   width: 100%;
-  height: 50vh; /* Adjust this value to control the height */
+  min-height: 50vh; /* Ensures the section is visible */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
 }
-
 
     .splash .logo {
       max-width: 120px;
@@ -215,9 +213,9 @@
 <body>
   <!-- Splash / Welcome Section -->
   <div class="splash" id="splash">
-    <!-- <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" /> -->
-    <h1 id="restaurantName"></h1>
-    <p></p>
+    <!-- <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" />
+    <h1 id="restaurantName">Welcome to The Great Eatery</h1>
+    <p>Please browse our menu below</p> -->
   </div>
 
   <!-- Container for Menu Sections -->

@@ -29,10 +29,10 @@
     /* --- Header / Splash Section --- */
     .splash {
   background: url('img/splash-screen.png') no-repeat center center;
-  background-size: contain; /* Ensures the whole image is visible */
-  background-attachment: fixed; /* Keeps the background in place while scrolling */
+  background-size: contain; /* Ensures full image visibility */
+  background-attachment: scroll; /* Prevents fixed background effect */
   width: 100%;
-  min-height: 100vh; /* Ensures it covers the full viewport height */
+  height: 50vh; /* Adjust this value to control the height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +40,7 @@
   text-align: center;
   padding: 30px 20px;
 }
+
 
     .splash .logo {
       max-width: 120px;

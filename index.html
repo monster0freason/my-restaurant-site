@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +17,11 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('img/your-background-image.png'); /* Add your image here */
-      background-attachment: fixed; /* Keeps the image fixed while scrolling */
-      background-size: cover;       /* Ensures the image covers the entire screen */
-      background-position: center;  /* Centers the image */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-image: url('img/your-background-image.png');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #333;
       line-height: 1.6;
     }
@@ -28,17 +32,17 @@
     
     /* --- Header / Splash Section --- */
     .splash {
-  background: url('img/splash-screen.png') no-repeat center center;
-  background-size: cover;
-  color: #fff;
-  text-align: center;
-  padding: 0; /* Remove padding */
-  width: 100%;
-  min-height: 40vh; /* Ensures the section is visible */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      background: url('img/splash-screen.png') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .splash .logo {
       max-width: 120px;
@@ -55,15 +59,13 @@
     /* --- Section Styles --- */
     section {
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);  /* 80% opaque white */
+      background-color: rgba(255, 255, 255, 0.8);
       border-bottom: 1px solid #ddd;
     }
     section h2 {
       color: #d00ad0;
       margin-bottom: 15px;
       font-size: 24px;
-      /* font-family: 'Monotype Corsiva','Roboto', sans-serif; */
-
     }
     section p.section-desc {
       font-size: 16px;
@@ -109,30 +111,48 @@
       color: #333;
     }
     
-    /* --- Fixed Navigation Button (Hamburger Icon) --- */
+    /* --- Fixed Navigation Buttons --- */
     .fixed-menu-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px; /* Changed from left: 20px; to right: 20px; */
-        width: 60px;
-        height: 60px;
-        border: none;
-        border-radius: 50%;
-        background-color: #d00ad0;
-        color: #fff;
-        font-size: 30px;
-        cursor: pointer;
-        z-index: 101;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background-color: #d00ad0;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 101;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
-    
+    .fixed-payment-button {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 101;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     /* --- Overlay Navigation --- */
-    /* .menu-overlay {
+    .menu-overlay {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 100%;
+      right: 0;
+      width: 50%;
       height: 100%;
       background: rgba(0, 0, 0, 0.8);
       color: #fff;
@@ -140,30 +160,15 @@
       display: none;
       overflow-y: auto;
       padding-top: 60px;
-    } */
+    }
 
-    .menu-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;         /* Align to the right side */
-  width: 50%;       /* Cover 50% of the screen */
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  z-index: 100;
-  display: none;
-  overflow-y: auto;
-  padding-top: 60px;
-}
-
-/* Adjust the close icon positioning if needed */
-.menu-overlay .close-overlay {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 35px;
-  cursor: pointer;
-}
+    .menu-overlay .close-overlay {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 35px;
+      cursor: pointer;
+    }
 
     .menu-overlay ul {
       list-style: none;
@@ -180,13 +185,6 @@
     .menu-overlay li:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
-    /* .menu-overlay .close-overlay {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 35px;
-      cursor: pointer;
-    } */
     
     /* --- Contact / Footer Section --- */
     .contact {
@@ -207,43 +205,44 @@
       }
     }
   </style>
-  <!-- Load js-yaml from CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </head>
 <body>
   <!-- Splash / Welcome Section -->
   <div class="splash" id="splash">
-    <!-- <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" />
+    <img id="restaurantLogo" src="restaurant-logo.png" alt="Restaurant Logo" class="logo" />
     <h1 id="restaurantName">Welcome to The Great Eatery</h1>
-    <p>Please browse our menu below</p> -->
+    <p>Please browse our menu below</p>
   </div>
 
   <!-- Container for Menu Sections -->
   <div id="menuContainer"></div>
 
-  <!-- Contact Section will be appended dynamically -->
+  <!-- Contact Section -->
   <div id="contactContainer"></div>
   
-  <!-- Footer / Contact Info (will be updated dynamically) -->
+  <!-- Footer / Contact Info -->
   <div class="contact" id="footer">
     <p>&copy; 2025 The Great Eatery. All rights reserved.</p>
   </div>
 
-  <!-- Fixed Navigation Button (Hamburger Icon) -->
+  <!-- Fixed Payment Button -->
+  <button class="fixed-payment-button" id="paymentButton">₹</button>
+
+  <!-- Fixed Navigation Button -->
   <button class="fixed-menu-button" id="menuButton">&#9776;</button>
 
   <!-- Fullscreen Overlay Navigation -->
   <div class="menu-overlay" id="menuOverlay">
     <span class="close-overlay" id="closeOverlay">&times;</span>
     <ul id="navList">
-      <!-- Navigation items will be populated dynamically -->
       <li data-target="splash">Home</li>
     </ul>
   </div>
 
-  <!-- JavaScript for Dynamic Content, Navigation and Smooth Scrolling -->
+  <!-- JavaScript -->
   <script>
-    // DOM elements for navigation overlay and dynamic menu container
+    // DOM elements
     const menuButton = document.getElementById('menuButton');
     const menuOverlay = document.getElementById('menuOverlay');
     const closeOverlay = document.getElementById('closeOverlay');
@@ -253,15 +252,19 @@
     const restaurantNameElem = document.getElementById('restaurantName');
     const restaurantLogoElem = document.getElementById('restaurantLogo');
     const footerElem = document.getElementById('footer');
+    const paymentButton = document.getElementById('paymentButton');
+    let restaurantUPI = '';
 
     // Show overlay when menu button is clicked
     menuButton.addEventListener('click', () => {
       menuOverlay.style.display = 'block';
     });
+
     // Close overlay when close icon is clicked
     closeOverlay.addEventListener('click', () => {
       menuOverlay.style.display = 'none';
     });
+
     // Smooth scroll for navigation items
     navList.addEventListener('click', (e) => {
       if (e.target && e.target.matches('li[data-target]')) {
@@ -274,7 +277,77 @@
       }
     });
 
-    // Function to create a dish card element
+    // UPI Payment Handler
+    paymentButton.addEventListener('click', () => {
+  // Use the owner's personal UPI ID
+  // const ownerUPI = '8552968161-2@ybl'; // Replace with the owner's actual UPI ID
+  const ownerUPI = 'ankitbhardwaj11411920-1@okicici';
+  const recipientName = 'Rucha Meshram'; // Replace with the owner's name
+  const note = 'Payment for Thick Shake cafe'; // Custom note for the transaction
+
+  // Construct the UPI deep link
+  const upiURL = `upi://pay?pa=${ownerUPI}&pn=${encodeURIComponent(recipientName)}&tn=${encodeURIComponent(note)}&cu=INR`;
+
+  // Try to open the UPI app
+  window.location.href = upiURL;
+
+  // Fallback for desktop or unsupported devices
+  setTimeout(() => {
+    alert(`Please open a UPI app and use this UPI ID: ${ownerUPI}`);
+  }, 500);
+});
+
+    // Fetch and parse YAML
+    fetch('menu.yml')
+      .then(response => response.text())
+      .then(yamlText => {
+        const data = jsyaml.load(yamlText);
+        restaurantUPI = data.restaurant.upi_id || 'default@upiid';
+
+        // Update restaurant info
+        if (data.restaurant) {
+          if (data.restaurant.name) {
+            restaurantNameElem.textContent = 'Welcome to ' + data.restaurant.name;
+          }
+          if (data.restaurant.logo) {
+            restaurantLogoElem.src = data.restaurant.logo;
+          }
+        }
+
+        // Create menu sections
+        if (data.restaurant && data.restaurant.sections) {
+          data.restaurant.sections.forEach(section => {
+            const sectionElem = createMenuSection(section);
+            menuContainer.appendChild(sectionElem);
+
+            const navItem = document.createElement('li');
+            navItem.setAttribute('data-target', section.id);
+            navItem.textContent = section.title;
+            navList.appendChild(navItem);
+          });
+        }
+
+        // Create contact section
+        if (data.restaurant && data.restaurant.contact) {
+          const contactSection = createContactSection(data.restaurant.contact);
+          contactContainer.appendChild(contactSection);
+
+          const navItem = document.createElement('li');
+          navItem.setAttribute('data-target', 'contact');
+          navItem.textContent = 'Contact';
+          navList.appendChild(navItem);
+        }
+
+        // Update footer
+        if (data.restaurant && data.restaurant.copyright) {
+          footerElem.innerHTML = '<p>&copy; ' + data.restaurant.copyright + '</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error loading or parsing YAML file:', error);
+      });
+
+    // Helper functions
     function createDishCard(dish) {
       const dishDiv = document.createElement('div');
       dishDiv.className = 'dish';
@@ -292,7 +365,7 @@
       infoDiv.appendChild(h3);
 
       const pDesc = document.createElement('p');
-      // pDesc.textContent = dish.description;
+      pDesc.textContent = dish.description;
       infoDiv.appendChild(pDesc);
 
       const priceSpan = document.createElement('span');
@@ -303,7 +376,6 @@
       return dishDiv;
     }
 
-    // Function to create a menu section element
     function createMenuSection(section) {
       const sectionElem = document.createElement('section');
       sectionElem.id = section.id;
@@ -327,7 +399,6 @@
       return sectionElem;
     }
 
-    // Function to create the Contact section
     function createContactSection(contact) {
       const sectionElem = document.createElement('section');
       sectionElem.id = 'contact';
@@ -350,58 +421,6 @@
 
       return sectionElem;
     }
-
-    // Fetch the YAML file and initialize the page
-    fetch('menu.yml')
-      .then(response => response.text())
-      .then(yamlText => {
-        // Parse the YAML text into a JavaScript object
-        const data = jsyaml.load(yamlText);
-
-        // Update restaurant info in the splash section
-        // if (data.restaurant) {
-        //   if (data.restaurant.name) {
-        //     restaurantNameElem.textContent = 'Welcome to ' + data.restaurant.name;
-        //   }
-        //   if (data.restaurant.logo) {
-        //     restaurantLogoElem.src = data.restaurant.logo;
-        //   }
-        // }
-
-        // For each section in the YAML, create and append the menu section
-        if (data.restaurant && data.restaurant.sections) {
-          data.restaurant.sections.forEach(section => {
-            // Create section element and append it
-            const sectionElem = createMenuSection(section);
-            menuContainer.appendChild(sectionElem);
-
-            // Also add to the navigation overlay list
-            const navItem = document.createElement('li');
-            navItem.setAttribute('data-target', section.id);
-            navItem.textContent = section.title;
-            navList.appendChild(navItem);
-          });
-        }
-
-        // Create and append the Contact section (if defined)
-        if (data.restaurant && data.restaurant.contact) {
-          const contactSection = createContactSection(data.restaurant.contact);
-          contactContainer.appendChild(contactSection);
-          // Also add Contact to the navigation overlay
-          const navItem = document.createElement('li');
-          navItem.setAttribute('data-target', 'contact');
-          navItem.textContent = 'Contact';
-          navList.appendChild(navItem);
-        }
-
-        // Update footer copyright (if provided)
-        if (data.restaurant && data.restaurant.copyright) {
-          footerElem.innerHTML = '<p>&copy; ' + data.restaurant.copyright + '</p>';
-        }
-      })
-      .catch(error => {
-        console.error('Error loading or parsing YAML file:', error);
-      });
   </script>
 </body>
 </html>

@@ -275,12 +275,22 @@
 
     // UPI Payment Handler
     paymentButton.addEventListener('click', () => {
-      const upiURL = `upi://pay?pa=${restaurantUPI}&pn=The%20Great%20Eatery&cu=INR`;
-      window.location.href = upiURL;
-      setTimeout(() => {
-        window.open(`https://upayi.link/${restaurantUPI}`, '_blank');
-      }, 500);
-    });
+  // Use the owner's personal UPI ID
+  const ownerUPI = 'owner@upi'; // Replace with the owner's actual UPI ID
+  const recipientName = 'Owner Name'; // Replace with the owner's name
+  const note = 'Payment for The Great Eatery'; // Custom note for the transaction
+
+  // Construct the UPI deep link
+  const upiURL = `upi://pay?pa=${ownerUPI}&pn=${encodeURIComponent(recipientName)}&tn=${encodeURIComponent(note)}&cu=INR`;
+
+  // Try to open the UPI app
+  window.location.href = upiURL;
+
+  // Fallback for desktop or unsupported devices
+  setTimeout(() => {
+    alert(`Please open a UPI app and use this UPI ID: ${ownerUPI}`);
+  }, 500);
+});
 
     // Fetch and parse YAML
     fetch('menu.yml')

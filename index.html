@@ -276,9 +276,9 @@
     // UPI Payment Handler
     paymentButton.addEventListener('click', () => {
   // Use the owner's personal UPI ID
-  const ownerUPI = 'owner@upi'; // Replace with the owner's actual UPI ID
-  const recipientName = 'Owner Name'; // Replace with the owner's name
-  const note = 'Payment for The Great Eatery'; // Custom note for the transaction
+  const ownerUPI = '8552968161-2@ybl'; // Replace with the owner's actual UPI ID
+  const recipientName = 'Rucha Meshram'; // Replace with the owner's name
+  const note = 'Payment for Thick Shake cafe'; // Custom note for the transaction
 
   // Construct the UPI deep link
   const upiURL = `upi://pay?pa=${ownerUPI}&pn=${encodeURIComponent(recipientName)}&tn=${encodeURIComponent(note)}&cu=INR`;

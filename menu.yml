@@ -149,10 +149,6 @@ restaurant:
           image: "img/green-apple-mojito.png"
           description: "A crisp and refreshing green apple mojito."
           price: "₹90"
-        - name: "Chikoo Mojito"
-          image: "img/chikoo-mojito.png"
-          description: "A sweet and creamy chikoo-infused mojito."
-          price: "₹90"
         - name: "Pulse Mojito"
           image: "img/pulse-mojito.png"
           description: "A tangy mojito inspired by the famous Pulse candy."
@@ -426,3 +422,6 @@ restaurant:
     email: "thick.shake.cafe.nagpur@gmail.com"
     # instagram: "thick_shake_cafe_nagpur"
   copyright: "2025 Thick Shake Cafe. All rights reserved."
+
+  restaurant:
+    upi_id: "ankitbhardwaj11411920-1@okicici"
